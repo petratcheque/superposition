@@ -1,0 +1,57 @@
+/* Reset + base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 100%;
+  background-color: #fff;
+  color: #000;
+  scroll-behavior: smooth;
+}
+
+/* Container holds all entries with full-screen vertical scroll */
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* Each entry takes full screen */
+.entry {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+/* Bold, solid line */
+.bold {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+/* Cursive, soft line */
+.cursive {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #444;
+  font-weight: normal;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .bold, .cursive {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+}
