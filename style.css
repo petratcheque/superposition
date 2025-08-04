@@ -42,11 +42,11 @@ html, body {
 
 /* Cursive, soft line */
 .cursive {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
   font-style: italic;
+  font-weight: 300;
   color: #444;
-  font-weight: normal;
 }
 
 /* Responsive tweaks */
