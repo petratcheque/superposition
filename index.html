@@ -62,5 +62,27 @@
 
   </div>
 
+  <script>
+    // Select all the truth entries (not the opening or final ones)
+    const container = document.querySelector('.container');
+    const entries = Array.from(document.querySelectorAll('.entry'));
+    const opening = document.querySelector('.entry.opening');
+    const final = document.querySelector('.entry.final');
+    const truths = entries.filter(e => e !== opening && e !== final);
+  
+    // Shuffle the truth entries
+    for (let i = truths.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [truths[i], truths[j]] = [truths[j], truths[i]];
+    }
+  
+    // Remove original truth entries
+    truths.forEach(entry => container.removeChild(entry));
+  
+    // Re-insert shuffled truths between opening and final
+    const finalIndex = Array.from(container.children).indexOf(final);
+    truths.forEach(entry => container.insertBefore(entry, container.children[finalIndex]));
+  </script>
+
 </body>
 </html>
